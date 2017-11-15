@@ -19,10 +19,12 @@ const map: SpriteSheet = new createjs.SpriteSheet({
  }
 });
 
+const background: createjs.Sprite = new createjs.Sprite(map);
+
 function main(): void {
   createGame();
 }
 
 function createGame(): void {
-
+  stage.addChild(background);
 }

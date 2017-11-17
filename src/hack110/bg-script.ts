@@ -11,7 +11,7 @@ import {
    pixi.js to run our game. We can define the window size of 
    the app in the Application constructor call.*/
 const app: Application = new Application(512, 512);
-document.body.appendChild(app.view); //<-- this appends the app's view property to the HTML document element
+document.body.appendChild(app.view); // <-- this appends the app's view property to the HTML document element
 
 /* We've added an image to the background of our application, 
    using the Sprite class--a Sprite is just a visual element in

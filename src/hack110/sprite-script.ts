@@ -27,8 +27,8 @@ jiffrey.y = 240;
 app.stage.addChild(jiffrey);
 
 /*
-  You'll notice our goal (or cpuhat) is also a Sprite, we'll describe
-  how we're going to differentiate these objects later. 
+   You'll notice our goal (or cpuhat) is also a Sprite, we'll describe
+   how we're going to differentiate these objects later. 
 */
 let cpuhat: Sprite = Sprite.fromImage("./cpuhat.png");
 cpuhat.scale.x = 0.1;

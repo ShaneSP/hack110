@@ -61,12 +61,12 @@ class Blob {
 
 let blobs: Blob[] = [];
 for (let i: number = 1; i <= 4; i++) {
-  let sprite: Sprite = Sprite.fromImage("./blob.png");
-  sprite.x = 450 / 4 * i - 20;
-  sprite.y = 256;
-  let blob: Blob = new Blob(sprite);
-  blobs.push(blob);
-  app.stage.addChild(blob.sprite);
+    let sprite: Sprite = Sprite.fromImage("./blob.png");
+    sprite.x = 450 / 4 * i - 20;
+    sprite.y = 256;
+    let blob: Blob = new Blob(sprite);
+    blobs.push(blob);
+    app.stage.addChild(blob.sprite);
 }
 
 /* The collisions are checked by comparing two DisplayObjects 
@@ -86,25 +86,25 @@ function resetJiffrey(): void {
 
 app.ticker.add(function(delta: number): void {
     for (let i: number = 0; i < blobs.length; i++) {
-    //   Let's have the enemies move.
-       
-    //   const blob: Blob = blobs[i];
-    //   blob.sprite.y += 5 * blob.direction;
-    //   if (Math.random() < 0.01) { // 1% chance every tick
-    //     blob.direction *= -1;
-    //   }
-    //   if (blob.sprite.y <= 0) {
-    //     blob.direction = 1;
-    //     blob.sprite.y = 1;
-    //   } else if (blob.sprite.y >= 512) {
-    //     blob.direction = -1;
-    //     blob.sprite.y = 511;
-    //   }
-    
-    //   This tests if the enemies are colliding with the protagonist.
-    //
-    //   if (isColliding(jiffrey, blob.sprite)) {
-    //     resetJiffrey();
-    //   }
+        //   Let's have the enemies move.
+        
+        //   const blob: Blob = blobs[i];
+        //   blob.sprite.y += 5 * blob.direction;
+        //   if (Math.random() < 0.01) { // 1% chance every tick
+        //     blob.direction *= -1;
+        //   }
+        //   if (blob.sprite.y <= 0) {
+        //     blob.direction = 1;
+        //     blob.sprite.y = 1;
+        //   } else if (blob.sprite.y >= 512) {
+        //     blob.direction = -1;
+        //     blob.sprite.y = 511;
+        //   }
+        
+        //   This tests if the enemies are colliding with the protagonist.
+        //
+        //   if (isColliding(jiffrey, blob.sprite)) {
+        //     resetJiffrey();
+        //   }
     }
 });

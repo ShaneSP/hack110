@@ -74,6 +74,12 @@ function resetJiffrey(): void {
   jiffrey.y = 240;
 }
 
+/*
+   We've now added a quasi-gamestate to check if our game is in a winning state.
+
+   Then create a function to handle what happens when our win state is active.
+*/
+
 let hasWon: boolean = false;
 
 let message: Text = new Text("You won!!");

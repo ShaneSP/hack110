@@ -37,7 +37,7 @@ cpuhat.x = 450;
 cpuhat.y = 240;
 app.stage.addChild(cpuhat);
 
-// window.onkeydown = function(e: KeyboardEvent): void {
+// window.onkeydown = (e: KeyboardEvent): void => {
 //     const LEFT: number = 37;
 //     const UP: number = 38;
 //     const RIGHT: number = 39;

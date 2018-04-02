@@ -28,7 +28,7 @@ cpuhat.x = 450;
 cpuhat.y = 240;
 app.stage.addChild(cpuhat);
 
-window.onkeydown = function(e: KeyboardEvent): void {
+window.onkeydown = (e: KeyboardEvent): void => {
     const LEFT: number = 37;
     const UP: number = 38;
     const RIGHT: number = 39;
@@ -73,18 +73,18 @@ for (let i: number = 1; i <= 4; i++) {
    and testing if their bounds are intersecting.
 */
 
-function isColliding(a: DisplayObject, b: DisplayObject): boolean {
+let isColliding = (a: DisplayObject, b: DisplayObject): boolean => {
     const ab: Rectangle = a.getBounds();
     const bb: Rectangle = b.getBounds();
     return ab.x + ab.width > bb.x && ab.x < bb.x + bb.width && ab.y + ab.height > bb.y && ab.y < bb.y + bb.height;
 }
 
-function resetJiffrey(): void {
+let resetJiffrey = (): void => {
     jiffrey.x = 30;
     jiffrey.y = 240;
 }
 
-app.ticker.add(function(delta: number): void {
+app.ticker.add((delta: number): void => {
     for (let i: number = 0; i < blobs.length; i++) {
         //   Let's have the enemies move.
         

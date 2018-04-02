@@ -46,7 +46,7 @@ for (let i: number = 1; i <= 4; i++) {
     app.stage.addChild(blob.sprite);
 }
 
-window.onkeydown = function(e: KeyboardEvent): void {
+window.onkeydown = (e: KeyboardEvent): void => {
     const LEFT: number = 37;
     const UP: number = 38;
     const RIGHT: number = 39;
@@ -63,13 +63,13 @@ window.onkeydown = function(e: KeyboardEvent): void {
     }
 };
 
-function isColliding(a: DisplayObject, b: DisplayObject): boolean {
-    const ab: Rectangle = a.getBounds();
-    const bb: Rectangle = b.getBounds();
+let isColliding = (a: DisplayObject, b: DisplayObject): boolean => {
+    let ab: Rectangle = a.getBounds();
+    let bb: Rectangle = b.getBounds();
     return ab.x + ab.width > bb.x && ab.x < bb.x + bb.width && ab.y + ab.height > bb.y && ab.y < bb.y + bb.height;
 }
 
-function resetJiffrey(): void {
+let resetJiffrey = (): void => {
     jiffrey.x = 30;
     jiffrey.y = 240;
 }
@@ -85,7 +85,7 @@ let hasWon: boolean = false;
 let message: Text = new Text("You won!!");
 let messageBox: Graphics = new Graphics();
 
-function handleWin(): void {
+let handleWin = (): void => {
     message.x = 216;
     message.y = 236;
     message.style.fill = 0xffffff;
@@ -98,9 +98,9 @@ function handleWin(): void {
     hasWon = true;
 }
 
-app.ticker.add(function(delta: number): void {
+app.ticker.add((delta: number): void => {
     for (let i: number = 0; i < blobs.length; i++) {
-        const blob: Blob = blobs[i];
+        let blob: Blob = blobs[i];
         blob.sprite.y += 5 * blob.direction;
         if (Math.random() < 0.01) { // 1% chance every tick
             blob.direction *= -1;

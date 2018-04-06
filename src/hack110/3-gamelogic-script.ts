@@ -65,7 +65,7 @@ for (let i: number = 1; i <= 4; i++) {
     sprite.x = 450 / 4 * i - 20;
     sprite.y = 256;
     let blob: Blob = new Blob(sprite);
-    blobs.push(blob);
+    blobs[blobs.length] = blob;
     app.stage.addChild(blob.sprite);
 }
 
@@ -77,12 +77,12 @@ let isColliding = (a: DisplayObject, b: DisplayObject): boolean => {
     const ab: Rectangle = a.getBounds();
     const bb: Rectangle = b.getBounds();
     return ab.x + ab.width > bb.x && ab.x < bb.x + bb.width && ab.y + ab.height > bb.y && ab.y < bb.y + bb.height;
-}
+};
 
 let resetJiffrey = (): void => {
     jiffrey.x = 30;
     jiffrey.y = 240;
-}
+};
 
 app.ticker.add((delta: number): void => {
     for (let i: number = 0; i < blobs.length; i++) {
@@ -102,7 +102,7 @@ app.ticker.add((delta: number): void => {
         //   }
         
         //   This tests if the enemies are colliding with the protagonist.
-        //
+        
         //   if (isColliding(jiffrey, blob.sprite)) {
         //     resetJiffrey();
         //   }

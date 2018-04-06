@@ -46,22 +46,54 @@ for (let i: number = 1; i <= 4; i++) {
     app.stage.addChild(blob.sprite);
 }
 
-window.onkeydown = (e: KeyboardEvent): void => {
+// let L: boolean = false;
+// let R: boolean = false;
+// let D: boolean = false;
+// let U: boolean = false;
+
+window.addEventListener('keydown', (e: KeyboardEvent): void  => {
+    console.log("key: " + e.keyCode);
     const LEFT: number = 37;
     const UP: number = 38;
     const RIGHT: number = 39;
     const DOWN: number = 40;
     const STEP: number = 5;
     if (e.keyCode === LEFT) {
+        // L = true;
         jiffrey.x -= STEP;
     } else if (e.keyCode === UP) {
+        // U = true;
         jiffrey.y -= STEP;
     } else if (e.keyCode === RIGHT) {
+        // R = true;
         jiffrey.x += STEP;
     } else if (e.keyCode === DOWN) {
+        // D = true;
         jiffrey.y += STEP;
     }
-};
+}, false);
+
+window.addEventListener('keyup', (e: KeyboardEvent): void  => {
+    console.log("key: " + e.keyCode);
+    const LEFT: number = 37;
+    const UP: number = 38;
+    const RIGHT: number = 39;
+    const DOWN: number = 40;
+    const STEP: number = 5;
+    if (e.keyCode === LEFT) {
+        // L = false;
+        // jiffrey.x -= STEP;
+    } else if (e.keyCode === UP) {
+        // U = false;
+        // jiffrey.y -= STEP;
+    } else if (e.keyCode === RIGHT) {
+        // R = false;
+        // jiffrey.x += STEP;
+    } else if (e.keyCode === DOWN) {
+        // D = false;
+        // jiffrey.y += STEP;
+    }
+}, false);
 
 let isColliding = (a: DisplayObject, b: DisplayObject): boolean => {
     let ab: Rectangle = a.getBounds();
@@ -112,17 +144,17 @@ app.ticker.add((delta: number): void => {
             blob.direction = -1;
             blob.sprite.y = 511;
         }
-        if (isColliding(jiffrey, blob.sprite)) {
-            resetJiffrey();
-        }
-        if (isColliding(jiffrey, cpuhat)) {
-            handleWin();
-        }
-        if (isColliding(jiffrey, messageBox) && hasWon) {
-            resetJiffrey();
-            app.stage.removeChild(message);
-            app.stage.removeChild(messageBox);
-            hasWon = false;
-        }
+        // if (isColliding(jiffrey, blob.sprite)) {
+        //     resetJiffrey();
+        // }
+        // if (isColliding(jiffrey, cpuhat)) {
+        //     handleWin();
+        // }
+        // if (isColliding(jiffrey, messageBox) && hasWon) {
+        //     resetJiffrey();
+        //     app.stage.removeChild(message);
+        //     app.stage.removeChild(messageBox);
+        //     hasWon = false;
+        // }
     }
 });

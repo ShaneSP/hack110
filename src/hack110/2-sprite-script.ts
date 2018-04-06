@@ -12,7 +12,6 @@ let background: Sprite = Sprite.fromImage("./dungeon.png");
 app.stage.addChild(background);
 
 /* New stuff! :D
-   This may look familiar to you! *cough*Emoji*cough*
 
    Below you see that we're using the Sprite class again to create
    our protagonist (Jiffrey). We then access Jiffrey's x, y-coordinates
@@ -37,19 +36,19 @@ cpuhat.x = 450;
 cpuhat.y = 240;
 app.stage.addChild(cpuhat);
 
-// window.onkeydown = (e: KeyboardEvent): void => {
-//     const LEFT: number = 37;
-//     const UP: number = 38;
-//     const RIGHT: number = 39;
-//     const DOWN: number = 40;
-//     const STEP: number = 5;
-//     if (e.keyCode === LEFT) {
-//         jiffrey.x -= STEP;
-//     } else if (e.keyCode === UP) {
-//         jiffrey.y -= STEP;
-//     } else if (e.keyCode === RIGHT) {
-//         jiffrey.x += STEP;
-//     } else if (e.keyCode === DOWN) {
-//         jiffrey.y += STEP;
-//     }
-// };
+window.onkeydown = (e: KeyboardEvent): void => {
+    // const LEFT: number = 37;
+    // const UP: number = 38;
+    // const RIGHT: number = 39;
+    // const DOWN: number = 40;
+    // const STEP: number = 5;
+    // if (e.keyCode === LEFT) {
+    //     jiffrey.x -= STEP;
+    // } else if (e.keyCode === UP) {
+    //     jiffrey.y -= STEP;
+    // } else if (e.keyCode === RIGHT) {
+    //     jiffrey.x += STEP;
+    // } else if (e.keyCode === DOWN) {
+    //     jiffrey.y += STEP;
+    // }
+};

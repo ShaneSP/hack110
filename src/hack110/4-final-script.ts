@@ -28,6 +28,7 @@ jiffrey.scale.y = 0.12;
 jiffrey.x = 40;
 jiffrey.y = 240;
 app.stage.addChild(jiffrey);
+const speed: number = 5;
 
 let cpuhat: Sprite = Sprite.fromImage("./cpuhat.png");
 cpuhat.scale.x = 0.1;
@@ -46,10 +47,10 @@ for (let i: number = 1; i <= 4; i++) {
     app.stage.addChild(blob.sprite);
 }
 
-// let L: boolean = false;
-// let R: boolean = false;
-// let D: boolean = false;
-// let U: boolean = false;
+let L: number = 0;
+let R: number = 0;
+let D: number = 0;
+let U: number = 0;
 
 window.addEventListener('keydown', (e: KeyboardEvent): void  => {
     console.log("key: " + e.keyCode);
@@ -57,19 +58,14 @@ window.addEventListener('keydown', (e: KeyboardEvent): void  => {
     const UP: number = 38;
     const RIGHT: number = 39;
     const DOWN: number = 40;
-    const STEP: number = 5;
     if (e.keyCode === LEFT) {
-        // L = true;
-        jiffrey.x -= STEP;
+        L = -1;
     } else if (e.keyCode === UP) {
-        // U = true;
-        jiffrey.y -= STEP;
+        U = -1;
     } else if (e.keyCode === RIGHT) {
-        // R = true;
-        jiffrey.x += STEP;
+        R = 1;
     } else if (e.keyCode === DOWN) {
-        // D = true;
-        jiffrey.y += STEP;
+        D = 1;
     }
 }, false);
 
@@ -79,19 +75,14 @@ window.addEventListener('keyup', (e: KeyboardEvent): void  => {
     const UP: number = 38;
     const RIGHT: number = 39;
     const DOWN: number = 40;
-    const STEP: number = 5;
     if (e.keyCode === LEFT) {
-        // L = false;
-        // jiffrey.x -= STEP;
+        L = 0;
     } else if (e.keyCode === UP) {
-        // U = false;
-        // jiffrey.y -= STEP;
+        U = 0;
     } else if (e.keyCode === RIGHT) {
-        // R = false;
-        // jiffrey.x += STEP;
+        R = 0;
     } else if (e.keyCode === DOWN) {
-        // D = false;
-        // jiffrey.y += STEP;
+        D = 0;
     }
 }, false);
 
@@ -144,17 +135,22 @@ app.ticker.add((delta: number): void => {
             blob.direction = -1;
             blob.sprite.y = 511;
         }
-        // if (isColliding(jiffrey, blob.sprite)) {
-        //     resetJiffrey();
-        // }
-        // if (isColliding(jiffrey, cpuhat)) {
-        //     handleWin();
-        // }
-        // if (isColliding(jiffrey, messageBox) && hasWon) {
-        //     resetJiffrey();
-        //     app.stage.removeChild(message);
-        //     app.stage.removeChild(messageBox);
-        //     hasWon = false;
-        // }
+
+        /* MAGIC */
+        jiffrey.x += (L + R) * speed;
+        jiffrey.y += (U + D) * speed;
+
+        if (isColliding(jiffrey, blob.sprite)) {
+            resetJiffrey();
+        }
+        if (isColliding(jiffrey, cpuhat)) {
+            handleWin();
+        }
+        if (isColliding(jiffrey, messageBox) && hasWon) {
+            resetJiffrey();
+            app.stage.removeChild(message);
+            app.stage.removeChild(messageBox);
+            hasWon = false;
+        }
     }
 });

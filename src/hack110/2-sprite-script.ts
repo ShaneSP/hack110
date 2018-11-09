@@ -14,16 +14,16 @@ app.stage.addChild(background);
 /* New stuff! :D
 
    Below you see that we're using the Sprite class again to create
-   our protagonist (Jiffrey). We then access Jiffrey's x, y-coordinates
+   our protagonist (Kris). We then access Kris's x, y-coordinates
    to set his starting position. Finally, we append our protagonist to
    our app. 
 */
-let jiffrey: Sprite = Sprite.fromImage("./jiffrey.jpg");
-jiffrey.scale.x = 0.12;
-jiffrey.scale.y = 0.12;
-jiffrey.x = 40;
-jiffrey.y = 240;
-app.stage.addChild(jiffrey);
+let kris: Sprite = Sprite.fromImage("./kris.png");
+kris.scale.x = 0.12;
+kris.scale.y = 0.12;
+kris.x = 40;
+kris.y = 240;
+app.stage.addChild(kris);
 
 /*
    You'll notice our goal (or cpuhat) is also a Sprite, we'll describe
@@ -43,12 +43,12 @@ window.onkeydown = (e: KeyboardEvent): void => {
     // const DOWN: number = 40;
     // const STEP: number = 5;
     // if (e.keyCode === LEFT) {
-    //     jiffrey.x -= STEP;
+    //     kris.x -= STEP;
     // } else if (e.keyCode === UP) {
-    //     jiffrey.y -= STEP;
+    //     kris.y -= STEP;
     // } else if (e.keyCode === RIGHT) {
-    //     jiffrey.x += STEP;
+    //     kris.x += STEP;
     // } else if (e.keyCode === DOWN) {
-    //     jiffrey.y += STEP;
+    //     kris.y += STEP;
     // }
 };

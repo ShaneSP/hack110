@@ -14,12 +14,12 @@ document.body.appendChild(app.view);
 let background: Sprite = Sprite.fromImage("./dungeon.png");
 app.stage.addChild(background);
 
-let jiffrey: Sprite = Sprite.fromImage("./jiffrey.jpg");
-jiffrey.scale.x = 0.12;
-jiffrey.scale.y = 0.12;
-jiffrey.x = 40;
-jiffrey.y = 240;
-app.stage.addChild(jiffrey);
+let kris: Sprite = Sprite.fromImage("./kris.png");
+kris.scale.x = 0.12;
+kris.scale.y = 0.12;
+kris.x = 40;
+kris.y = 240;
+app.stage.addChild(kris);
 
 let cpuhat: Sprite = Sprite.fromImage("./cpuhat.png");
 cpuhat.scale.x = 0.1;
@@ -35,13 +35,13 @@ window.onkeydown = (e: KeyboardEvent): void => {
     const DOWN: number = 40;
     const STEP: number = 5;
     if (e.keyCode === LEFT) {
-        jiffrey.x -= STEP;
+        kris.x -= STEP;
     } else if (e.keyCode === UP) {
-        jiffrey.y -= STEP;
+        kris.y -= STEP;
     } else if (e.keyCode === RIGHT) {
-        jiffrey.x += STEP;
+        kris.x += STEP;
     } else if (e.keyCode === DOWN) {
-        jiffrey.y += STEP;
+        kris.y += STEP;
     }
 };
 
@@ -79,9 +79,9 @@ let isColliding = (a: DisplayObject, b: DisplayObject): boolean => {
     return ab.x + ab.width > bb.x && ab.x < bb.x + bb.width && ab.y + ab.height > bb.y && ab.y < bb.y + bb.height;
 };
 
-let resetJiffrey = (): void => {
-    jiffrey.x = 30;
-    jiffrey.y = 240;
+let resetKris = (): void => {
+    kris.x = 30;
+    kris.y = 240;
 };
 
 app.ticker.add((delta: number): void => {
@@ -103,8 +103,8 @@ app.ticker.add((delta: number): void => {
         
         //   This tests if the enemies are colliding with the protagonist.
         
-        //   if (isColliding(jiffrey, blob.sprite)) {
-        //     resetJiffrey();
+        //   if (isColliding(kris, blob.sprite)) {
+        //     resetKris();
         //   }
     }
 });

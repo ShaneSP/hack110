@@ -23,8 +23,8 @@ let background: Sprite = Sprite.fromImage("./dungeon.png");
 app.stage.addChild(background);
 
 let kris: Sprite = Sprite.fromImage("./kris.png");
-kris.scale.x = 0.16;
-kris.scale.y = 0.16;
+kris.scale.x = 0.12;
+kris.scale.y = 0.12;
 kris.x = 40;
 kris.y = 240;
 app.stage.addChild(kris);
@@ -119,7 +119,7 @@ let handleWin = (): void => {
     app.stage.addChild(messageBox);
     app.stage.addChild(message);
     hasWon = true;
-}
+};
 
 app.ticker.add((delta: number): void => {
     for (let i: number = 0; i < blobs.length; i++) {

@@ -34,21 +34,22 @@ cpuhat.scale.x = 0.1;
 cpuhat.scale.y = 0.1;
 cpuhat.x = 450;
 cpuhat.y = 240;
-app.stage.addChild(cpuhat);
+// app.stage.addChild(cpuhat);
+
+const LEFT: number = 37;
+const UP: number = 38;
+const RIGHT: number = 39;
+const DOWN: number = 40;
+const STEP: number = 5;
 
 window.onkeydown = (e: KeyboardEvent): void => {
-    // const LEFT: number = 37;
-    // const UP: number = 38;
-    // const RIGHT: number = 39;
-    // const DOWN: number = 40;
-    // const STEP: number = 5;
-    // if (e.keyCode === LEFT) {
-    //     kris.x -= STEP;
-    // } else if (e.keyCode === UP) {
-    //     kris.y -= STEP;
-    // } else if (e.keyCode === RIGHT) {
-    //     kris.x += STEP;
-    // } else if (e.keyCode === DOWN) {
-    //     kris.y += STEP;
-    // }
+    if (e.keyCode === LEFT) {
+        kris.x -= STEP;
+    } else if (e.keyCode === UP) {
+        kris.y -= STEP;
+    } else if (e.keyCode === RIGHT) {
+        kris.x += STEP;
+    } else if (e.keyCode === DOWN) {
+        kris.y += STEP;
+    }
 };

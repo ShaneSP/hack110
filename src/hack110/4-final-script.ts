@@ -52,12 +52,13 @@ let R: number = 0;
 let D: number = 0;
 let U: number = 0;
 
-window.addEventListener('keydown', (e: KeyboardEvent): void  => {
-    console.log("key: " + e.keyCode);
-    const LEFT: number = 37;
-    const UP: number = 38;
-    const RIGHT: number = 39;
-    const DOWN: number = 40;
+const LEFT: number = 37;
+const UP: number = 38;
+const RIGHT: number = 39;
+const DOWN: number = 40;
+
+window.addEventListener('keydown', (e: KeyboardEvent): void => {
+    // console.log("key: " + e.keyCode);
     if (e.keyCode === LEFT) {
         L = -1;
     } else if (e.keyCode === UP) {
@@ -67,14 +68,9 @@ window.addEventListener('keydown', (e: KeyboardEvent): void  => {
     } else if (e.keyCode === DOWN) {
         D = 1;
     }
-}, false);
+},                      false);
 
-window.addEventListener('keyup', (e: KeyboardEvent): void  => {
-    console.log("key: " + e.keyCode);
-    const LEFT: number = 37;
-    const UP: number = 38;
-    const RIGHT: number = 39;
-    const DOWN: number = 40;
+window.addEventListener('keyup', (e: KeyboardEvent): void => {
     if (e.keyCode === LEFT) {
         L = 0;
     } else if (e.keyCode === UP) {
@@ -84,18 +80,18 @@ window.addEventListener('keyup', (e: KeyboardEvent): void  => {
     } else if (e.keyCode === DOWN) {
         D = 0;
     }
-}, false);
+},                      false);
 
 let isColliding = (a: DisplayObject, b: DisplayObject): boolean => {
     let ab: Rectangle = a.getBounds();
     let bb: Rectangle = b.getBounds();
     return ab.x + ab.width > bb.x && ab.x < bb.x + bb.width && ab.y + ab.height > bb.y && ab.y < bb.y + bb.height;
-}
+};
 
 let resetKris = (): void => {
     kris.x = 30;
     kris.y = 240;
-}
+};
 
 /*
    We've now added a quasi-gamestate to check if our game is in a winning state.

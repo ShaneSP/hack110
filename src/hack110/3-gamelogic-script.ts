@@ -88,23 +88,25 @@ app.ticker.add((delta: number): void => {
     for (let i: number = 0; i < blobs.length; i++) {
         //   Let's have the enemies move.
         
-        //   const blob: Blob = blobs[i];
-        //   blob.sprite.y += 5 * blob.direction;
-        //   if (Math.random() < 0.01) { // 1% chance every tick
-        //     blob.direction *= -1;
-        //   }
-        //   if (blob.sprite.y <= 0) {
-        //     blob.direction = 1;
-        //     blob.sprite.y = 1;
-        //   } else if (blob.sprite.y >= 512) {
-        //     blob.direction = -1;
-        //     blob.sprite.y = 511;
-        //   }
+          const blob: Blob = blobs[i];
+          blob.sprite.y += 5 * blob.direction;
+        // random direction change
+          if (Math.random() < 0.01) { // 1% chance every tick
+            blob.direction *= -1;
+          }
+        // don't go out of bounds
+          if (blob.sprite.y <= 0) {
+            blob.direction = 1;
+            blob.sprite.y = 1;
+          } else if (blob.sprite.y >= 512) {
+            blob.direction = -1;
+            blob.sprite.y = 511;
+          }
         
         //   This tests if the enemies are colliding with the protagonist.
         
-        //   if (isColliding(kris, blob.sprite)) {
-        //     resetKris();
-        //   }
+          if (isColliding(kris, blob.sprite)) {
+            resetKris();
+          }
     }
 });

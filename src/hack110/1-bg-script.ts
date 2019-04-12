@@ -27,4 +27,6 @@ let init = () => {
     */
     let background: Sprite = Sprite.fromImage("./dungeon.png");
     app.stage.addChild(background);
-}
+};
+
+init();

@@ -1,4 +1,4 @@
-
+/* tslint:disable */
 /* 
    This import statement is pulling in the 
    classes we need from the pixi.js API

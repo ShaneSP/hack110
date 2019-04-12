@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 import {
     Sprite,
     Container,
